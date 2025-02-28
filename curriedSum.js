@@ -21,6 +21,21 @@ const curry = (fn, arity) => {
   
   console.log( curriedSum(1)(2)(3)(4));
 
+//******************************************
+function infiateCurry(a) {
+  return function(b) {
+    if(!b) {
+      return a
+    } else {
+      infiateCurry(a+b)
+    }
+  }
+}
+
+// const summing = x => y => !!y ? summing(x + y) : x;
+//******************************************
+
+
  /*  const curry = function(fn) {
     return function(...args) {
     return fn.bind(null, ...args);
